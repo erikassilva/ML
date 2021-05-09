@@ -203,7 +203,9 @@ One might expect that pixels in an image have high correlation with neighboring 
 print("Shape of conv1 feature maps: {0}".format(conv1.shape))
 
 # Apply 2nd convolutional layer, with striding of 2
-conv2_strided = F.relu(F.conv2d(conv1, W2, bias=b2, stride=2, padding=1))
+conv2_strided = F.relu(F.conv2d(conv1, W2, bias=b2, stride=2, padding=1)) 
+
+####Nota: padding = redução do tamanho proporcionalmente ex. 6x6 para 3x3 - pixels (corners) are used once! output = input size -> output = N(input) + 2*P(padding) - F(filter) + 1
 
 # Print output shape
 print("Shape of conv2 feature maps with stride of 2: {0}".format(conv2_strided.shape))
