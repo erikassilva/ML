@@ -172,6 +172,8 @@ class MNIST_CNN(nn.Module):
         x = self.conv4(x)
         x = F.relu(x)
         x = F.max_pool2d(x, kernel_size=2)
+
+        print(x.shape)
                 
        # fc layer 1
         x = x.view(-1, 4*4*64)
